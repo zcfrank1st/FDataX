@@ -22,22 +22,22 @@ class StringColumn(rawData: String, typeValue: ColumnType, byteSize: Int) extend
     }
   }
 
-  override def asLong: Long = ???
+  override def asLong: Option[Long] = ???
 
   override def asBigInteger: Option[BigInt] = {
     validateDoubleSpecific(rawData)
-    Option(this.asBigDecimal.toBigInt())
+    Option(this.asBigDecimal.get.toBigInt())
   }
 
   override def asString: Option[String] = Option(rawData)
 
-  override def asBoolean: Boolean = ???
+  override def asBoolean: Option[Boolean] = ???
 
-  override def asBytes: Array[Byte] = ???
+  override def asBytes: Option[Array[Byte]] = ???
 
-  override def asDouble: Double = ???
+  override def asDouble: Option[Double] = ???
 
-  override def asDate: Date = ???
+  override def asDate: Option[Date] = ???
 
-  override def asBigDecimal: BigDecimal = ???
+  override def asBigDecimal: Option[BigDecimal] = ???
 }

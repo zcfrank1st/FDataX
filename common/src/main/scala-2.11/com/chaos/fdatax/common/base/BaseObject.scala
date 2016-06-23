@@ -5,7 +5,7 @@ import org.apache.commons.lang3.builder.{EqualsBuilder, HashCodeBuilder, ToStrin
 /**
   * Created by zcfrank1st on 6/23/16.
   */
-class BaseObject {
+trait BaseObject {
   override def hashCode(): Int = HashCodeBuilder.reflectionHashCode(this, false)
 
   override def equals(obj: scala.Any): Boolean = EqualsBuilder.reflectionEquals(this, obj, false)

@@ -20,14 +20,14 @@ abstract class Column(rawData: AnyRef, typeValue: ColumnType, byteSize: Int) ext
 
   def getByteSize: Int = this.byteSize
 
-  abstract def asLong: Long
-  abstract def asDouble: Double
-  abstract def asString: String
-  abstract def asDate: Date
-  abstract def asBytes: Array[Byte]
-  abstract def asBoolean: Boolean
-  abstract def asBigDecimal: BigDecimal
-  abstract def asBigInteger: BigInt
+  def asLong: Option[Long]
+  def asDouble: Option[Double]
+  def asString: Option[String]
+  def asDate: Option[Date]
+  def asBytes: Option[Array[Byte]]
+  def asBoolean: Option[Boolean]
+  def asBigDecimal: Option[BigDecimal]
+  def asBigInteger: Option[BigInt]
 
   override def toString: String = gson.toJson(this)
 }
